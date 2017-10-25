@@ -1,0 +1,93 @@
+/*.active { background: #650AE4; color: white; }
+.inacive { background: #EC5D5D; color: black; } */
+.button { font-size:1.8em; }
+#content { padding:30px; background:#CF5D5D; }
+
+
+body {
+    padding : 10px ;
+    
+  }
+  
+  #exTab1 .tab-content {
+    color : black;
+    background-color: beige;
+    padding : 5px 15px;
+  }
+  
+  #exTab2 h3 {
+    color : black;
+    background-color: beige;
+    padding : 5px 15px;
+  }
+  
+  /* remove border radius for the tab */
+  
+  #exTab1 .nav-pills > li > a {
+    border-radius: 0;
+  }
+  
+  /* change border radius for the tab , apply corners on top*/
+  
+  #exTab3 .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+  }
+  
+  #exTab3 .tab-content {
+    color : black;
+    background-color:beige;
+    padding : 5px 15px;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+}
+.clearfix{
+  height: -webkit-fill-available;
+  background-color: beige;
+}
+
+.dropdown-menu > li:hover
+{
+background-color:blueviolet;
+
+}
+  
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}

@@ -1,3 +1,64 @@
-<h1>
-  {{title}}
-</h1>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a href="#2a"  (click)="tabHome.click()"  data-toggle="tab">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+<div id="exTab1" class="container">	
+<ul  class="nav nav-pills">
+<li class="slidebar">    <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span> </li> 
+  <li class="active">
+        <a  href="#1a" data-toggle="tab">Home</a>
+			</li>
+			<li><a href="#2a" #tabHome data-toggle="tab">About</a>
+			</li>
+      <li class="dropdown" >
+        <a href="#" data-toggle="dropdown">Paper Presentation </a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#tab4primary" data-toggle="tab">Basic Science</a></li>
+            <li><a href="#tab5primary" data-toggle="tab">Civil Engineering</a></li>
+        </ul>
+    </li>
+  		<li><a href="#4a" data-toggle="tab">Background color</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown">Dropdown </a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#tab4primary" data-toggle="tab">Primary 4</a></li>
+            <li><a href="#tab5primary" data-toggle="tab">Primary 5</a></li>
+        </ul>
+    </li>
+		</ul>
+<div class="container-fluid">
+  <about>Loading About</about>
+</div>
+			<div class="tab-content clearfix">
+			  <div class="tab-pane active" id="1a">
+          <home>Loading Home</home>
+				</div>
+				<div class="tab-pane  fade" id="2a">
+         <about>Loading About</about>
+				</div>
+        <div class="tab-pane fade" id="3a">
+          <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+				</div>
+          <div class="tab-pane  fade" id="4a">
+          <h3>We use css to change the background color of the content to be equal to the tab</h3>
+        </div>
+        <div class="tab-pane fade" id="tab4primary">Primary 4</div>
+        <div class="tab-pane fade" id="tab5primary">Primary 5</div>
+			</div>
+  </div>
+
+
+<script>
+  (function($) {
+  $('.dropdown').hover(function(){ 
+    console.log("insice ")
+  $('.dropdown', this).trigger('click'); 
+});
+
+})(jQuery);
+</script>

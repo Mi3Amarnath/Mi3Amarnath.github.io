@@ -1,0 +1,23 @@
+.example-container {
+    width: 100%;
+    height: 100vh;
+    /*border: 1px solid rgba(221, 53, 53, 0.5);*/
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+    height: 100%;
+    width: 50%;
+  }
+  .liitem{
+    background: grey;
+    border: 1px border-style red;
+    color: white;
+  }

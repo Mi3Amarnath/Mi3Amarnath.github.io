@@ -1,0 +1,44 @@
+<md-sidenav-container class="example-container">
+ <div class="container">
+    <md-tab-group>
+        <md-tab label="Tab 1">Content 1</md-tab>
+        <md-tab label="Tab 2">Content 2</md-tab>
+        <md-tab label="Menu">sad</md-tab>
+      </md-tab-group>
+ </div>
+
+ <div>
+    <button type="button" md-button (click)="sidenav.open()" (mouseenter) ="sidenav.open()"  (mouseleave) ="sidenav.close()">
+    Open sidenav
+  </button>  
+  <md-sidenav #sidenav class="example-sidenav">
+     <div  class="liitem" (click)= "clickeMe('one')">One</div> 
+     <div class="liitem" (click)= "clickeMe('two')">Two!</div> 
+     <div  class="liitem" (click)= "clickeMe('three')">Three!</div> 
+     <div  class="liitem" (click)= "clickeMe('four')">Four!</div> 
+     <div  class="liitem" (click)= "clickeMe('five')">Five!</div> 
+    </md-sidenav>
+    <div>
+        
+        </div>
+    <div >
+      <div *ngIf="type==='one'">
+          Type one selected
+
+      </div>
+      <div *ngIf="type==='two'">
+          Type two selected
+
+      </div>
+      <div *ngIf="type==='three'">
+          Type three selected
+
+      </div>
+      <div *ngIf="type==='four'">
+          Type four selected
+
+      </div>
+      <app-dialog>Dialog here</app-dialog>
+    </div>
+</div>
+  </md-sidenav-container>

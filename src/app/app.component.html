@@ -1,7 +1,10 @@
+<div class="header">
+    <img [src]="aavishkar" alt="Chicago" style="height: 200px">
 
+</div>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-    <a href="#2a"  (click)="tabHome.click()"  data-toggle="tab">About</a>
+    <a href="#2a"  (click)="tabAbout.click()"  data-toggle="tab">About</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
@@ -12,13 +15,13 @@
   <li class="active">
         <a  href="#1a" data-toggle="tab">Home</a>
 			</li>
-			<li><a href="#2a" #tabHome data-toggle="tab">About</a>
+			<li><a href="#2a" #tabAbout data-toggle="tab">About</a>
 			</li>
       <li class="dropdown" >
         <a href="#" data-toggle="dropdown">Paper Presentation </a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#tab4primary" data-toggle="tab">Basic Science</a></li>
-            <li><a href="#tab5primary" data-toggle="tab">Civil Engineering</a></li>
+            <li ><a class="selectfromdropdown" href="#tab4primary" data-toggle="tab">Basic Science</a></li>
+            <li ><a  class="selectfromdropdown" href="#tab5primary" data-toggle="tab">Civil Engineering</a></li>
         </ul>
     </li>
   		<li><a href="#4a" data-toggle="tab">Background color</a>
@@ -31,15 +34,15 @@
         </ul>
     </li>
 		</ul>
-<div class="container-fluid">
+<!--<div class="container-fluid">
   <about>Loading About</about>
-</div>
+</div> -->
 			<div class="tab-content clearfix">
 			  <div class="tab-pane active" id="1a">
           <home>Loading Home</home>
 				</div>
 				<div class="tab-pane  fade" id="2a">
-         <about>Loading About</about>
+         <app-aboutus>Loading About</app-aboutus>
 				</div>
         <div class="tab-pane fade" id="3a">
           <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
@@ -47,7 +50,7 @@
           <div class="tab-pane  fade" id="4a">
           <h3>We use css to change the background color of the content to be equal to the tab</h3>
         </div>
-        <div class="tab-pane fade" id="tab4primary">Primary 4</div>
+        <div class="tab-pane fade" id="tab4primary"><div class="paragraph" style="text-align:left;"><font color="#da4444"><span style="font-weight:400"><span style="font-weight:400"><font size="6"><strong><span>&nbsp;&nbsp;&nbsp;Basic Science TOPICS</span></strong></font></span></span></font><font size="6"><strong><font color="#da4444">&#65279;:</font></strong></font><br /><br /><font size="4"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.Photonics: Theory and its applications.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.Physics of Micro &amp; Molecular Electronic Devices.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.Conquering Metallic Corrosion.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Green Chemistry in Technology.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.Applications of Differential equations in Mathematical Modelling.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.Transformation techniques in Engineering</strong></font>.<br /><br /><strong><font size="4" color="#f80707">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="5">Rules:</font><br /></font></strong><font size="4"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. The format of paper must be in Time New Roman with font size 12,1.5 - line spacing<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in MS-Word format must not exceed 8 pages.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 2 participants in each team.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Time limit: 10Mins for&nbsp; presentation and 2Mins for discussions.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Registration fees Rs.200/- per team</font><br /><font size="4"><strong><font color="#f80707">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Staff Co-ordinators:</font></font></strong><br /><strong><font size="3" color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="4">1. Dr. Anita.R.Shettar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cell:9844829591</font></font><br /><font color="#3f3f3f"><font color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Dr. Satish.Hande &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cell:8050425503</font></font></strong></font><br /><br /><font size="4"><strong><font color="#f80707"><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Student Co-ordinator:</font></font></strong><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">&nbsp;<font size="4"><strong>&nbsp; <font color="#2a2a2a">1.</font></strong></font></font><strong><strong> Deepa.Amingad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#2a2a2a">Cell:</font>7411156524</strong></strong></font><br /><font size="4"><strong><font size="3" color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></strong></font><br /><font size="5"><font color="#5848b7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mail id:</strong></font><span><font color="#5fa233"><strong>&#65279;aavishkaarbs@gmail.com</strong></font></span></font><br /></div></div>
         <div class="tab-pane fade" id="tab5primary">Primary 5</div>
 			</div>
   </div>

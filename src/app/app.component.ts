@@ -30,11 +30,11 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 })
 export class AppComponent {
   title = 'Project Title';
-  
+  private aavishkar= require("./assets/aavishkar.png");
   constructor(private _dataService:DataServiceService ){
 
   }
-   openNav() {
+   openNav() { 
     document.getElementById("mySidenav").style.width = "250px";
 }
 

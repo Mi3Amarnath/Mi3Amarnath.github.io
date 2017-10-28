@@ -17,8 +17,13 @@ import { AutocompleteComponent } from './autocomplete/autocomplete.component'
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DialogDataExample ,DialogDataExampleDialog} from './dialog/dialog.component';
 import { NestedMenuExampleComponent } from './nested-menu-example/nested-menu-example.component';
-import { HomeComponent} from './home/home.component'
+import { HomeComponent} from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
  import 'hammerjs';
+ //maaps
+ import { AgmCoreModule,MapsAPILoader } from '@agm/core';
+
+ import { MapsComponent } from './maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +32,14 @@ import { HomeComponent} from './home/home.component'
     AboutComponent,
     UserProfileComponent,UserComponent,UserFormComponent,
     AutocompleteComponent,SidenavComponent,DialogDataExample,DialogDataExampleDialog,
-    NestedMenuExampleComponent,HomeComponent
+    NestedMenuExampleComponent,HomeComponent,AboutusComponent,MapsComponent
   ],
   imports: [
     BrowserModule,
+   AgmCoreModule.forRoot({
+      apiKey: "AIzaSyAOc3GaA9MLJwxYTYqqeiBeWb1_AhbODBc",
+      libraries: ["places"]
+    }),
     FormsModule,
     HttpModule,
     routes,

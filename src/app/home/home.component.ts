@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   private LOGO = require("../assets/Penguins.jpg");
+  private bestFromWaste = require("../assets/bestfromwaste.png");
+  private tribologi = require("../assets/tribologi.png");
+  private generalquiz = require("../assets/generalquiz.png");
   private ELOGO=require("../assets/Penguins.jpg");
   constructor() { }
   public headerName:any;
@@ -15,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
   public opentribology():void{
     this.headerName="Tri Bology";
-    this.ELOGO=require("../assets/Penguins.jpg");
+    this.ELOGO=this.tribologi;
     this.content=` 
     
     <br/>
@@ -38,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   openBestFromWaste():void{
     this.headerName="Best From Waste";
-    this.ELOGO=require("../assets/Penguins.jpg");
+    this.ELOGO=this.bestFromWaste;
     this.content=` 
     Rules:<br/>
     1. Use of waste material to create theme or project.<br/>
@@ -60,5 +63,26 @@ export class HomeComponent implements OnInit {
     2.Ms.Priyanka<br/>
     3.Mr.Shivareddy<br/>
     4.Mr.Rohit       <br/>`;
+  }
+  openGeneralQuiz():void{
+    this.headerName="General Quiz";
+    this.ELOGO=this.generalquiz;
+    this.content=` 
+    Rules: <br/>
+    1. Two members from each group. <br/>
+    2. Shortlisted groups will be sent to second round. <br/>
+    3. Judges decision will be final. <br/>
+    <br/>
+    Event charges:Rs.20/- per team <br/>
+    <br/>
+    Staff coordinators: <br/>
+    ​1. Prof. Naveen S Hiremath <br/>
+    2. Prof. R J Talapati <br/>
+    3. Prof Gurunath M. <br/>
+    <br/>
+    Student Coordinators: <br/>
+    1.Parag Bhat                                         9145477595
+    2.Sumedh N
+    <br/>`;
   }
 }

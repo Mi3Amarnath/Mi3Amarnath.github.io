@@ -5,6 +5,7 @@
 
 body{
   background-image: 'url('+bglogo+')';
+  height: 70vh;
 }
 
   #exTab1 .tab-content {

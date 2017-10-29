@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   private tribologi = require("../assets/tribologi.png");
   private generalquiz = require("../assets/generalquiz.png");
   private ELOGO=require("../assets/Penguins.jpg");
+  private bglogo= require("../assets/body-bg.jpg");
   constructor() { }
   public headerName:any;
   public content:any='\n';

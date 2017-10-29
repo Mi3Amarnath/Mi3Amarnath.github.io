@@ -31,6 +31,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 export class AppComponent {
   title = 'Project Title';
   private aavishkar= require("./assets/aavishkar.png");
+  private bglogo= require("./assets/body-bg.jpg");
   constructor(private _dataService:DataServiceService ){
 
   }

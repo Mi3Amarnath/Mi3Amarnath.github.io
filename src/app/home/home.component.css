@@ -105,3 +105,6 @@
     background-color:#b51d1d;
     border-color: #011344;
   }
+  body{
+    background-image: 'url('+bglogo+')';
+  }

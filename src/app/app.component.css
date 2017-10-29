@@ -3,7 +3,9 @@
 .button { font-size:1.8em; }
 #content { padding:30px; background:#CF5D5D; }
 
-
+body{
+  background-image: 'url('+bglogo+')';
+}
 
   #exTab1 .tab-content {
     color : black;
@@ -41,12 +43,19 @@
 .clearfix{
   height: -webkit-fill-available;
   background-color:black;
+  background-image: 'url('+bglogo+')';
+  
 }
 
 .dropdown-menu .li:hover
 {
 background-color:blueviolet;
 
+}
+
+.selectfromdropdown:hover a{
+  background-color: #581209;
+  color: white;
 }
   
 .sidenav {
@@ -121,4 +130,7 @@ background-color:blueviolet;
 
 .button:hover {
   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+}
+.boldertext{
+  font-weight: bold;
 }

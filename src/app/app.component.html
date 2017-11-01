@@ -4,33 +4,42 @@
 </div>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-    <a href="#2a"  (click)="tabAbout.click();closeNav()"  data-toggle="tab">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <a href="javascript:void(0)"  (click)="tabAbout.click();closeNav()"  data-toggle="tab">About</a>
+    <a href="javascript:void(0)"   (click)="home.click();closeNav();toggleMove('andriod')">Andriod App</a>
+    <a href="javascript:void(0)"  (click)="home.click();closeNav();toggleMove('fb')" >Facebook</a>
+    <a href="javascript:void(0)"  (click)="home.click();closeNav()" >Contact</a>
   </div>
 <div id="exTab1" class="container" style="width:100%;color:white" [ngStyle]="{'background-image': 'url('+bglogo+')','background-size':'100% 100%'}">	
 <ul  class="nav nav-pills boldertext">
 <li class="slidebar">    <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span> </li> 
   <li class="active">
-        <a  href="#1a" data-toggle="tab">Home</a>
+        <a  href="#1a" #home data-toggle="tab" (click)="toggleMove('home')" >Home</a>
 			</li>
 			<li><a href="#2a" #tabAbout data-toggle="tab">About</a>
 			</li>
       <li class="dropdown" >
         <a href="#" data-toggle="dropdown">Paper Presentation </a>
         <ul class="dropdown-menu" role="menu">
-            <li class="selectfromdropdown" ><a href="#tab4primary" data-toggle="tab">Basic Science</a></li>
-            <li class="selectfromdropdown"><a   href="#tab5primary" data-toggle="tab">Civil Engineering</a></li>
+            <li class="selectfromdropdown" ><a href="#tab4primary" data-toggle="tab" (click)="paperPresentation('science')">Basic Science</a></li>
+            <li class="selectfromdropdown"><a   href="#tab4primary" data-toggle="tab" (click)="paperPresentation('civil')" >Civil Engineering</a></li>
+            <li class="selectfromdropdown"><a   href="#tab4primary" data-toggle="tab" (click)="paperPresentation('cs')">Computer Science &amp; Engineering</a></li>
+            <li class="selectfromdropdown"><a   href="#tab4primary" data-toggle="tab" (click)="paperPresentation('ec')">Electronic &amp; Commpunication Engineering</a></li>
+            <li class="selectfromdropdown"><a   href="#tab4primary" data-toggle="tab" (click)="paperPresentation('ee')">Electrical &amp; Electronic Engineering</a></li>
+            <li class="selectfromdropdown"><a   href="#tab4primary" data-toggle="tab" (click)="paperPresentation('mech')">Mechanical Engineering</a></li>
         </ul>
     </li>
-  		<li><a href="#4a" data-toggle="tab">Background color</a>
+      <li class="dropdown"><a href="#" data-toggle="dropdown">Day 1 Events</a>
+        <ul class="dropdown-menu" role="menu">
+            <li class="selectfromdropdown" ><a href="#tab5primary" data-toggle="tab" (click)="events('tribologi')">Tribo-Logi</a></li>
+            <li class="selectfromdropdown" ><a href="#tab5primary" data-toggle="tab" (click)="events('bestfromwaste')">Best From Waste</a></li>
+
+        </ul>
       </li>
       <li class="dropdown">
-        <a href="#" data-toggle="dropdown">Dropdown </a>
+        <a href="#" data-toggle="dropdown">Day 2 Events </a>
         <ul class="dropdown-menu" role="menu">
-            <li class="selectfromdropdown"><a href="#tab4primary" data-toggle="tab">Primary 4</a></li>
-            <li class="selectfromdropdown"><a href="#tab5primary" data-toggle="tab">Primary 5</a></li>
+            <li class="selectfromdropdown"><a href="#tab5primary" data-toggle="tab" (click)="events('generalquiz')">General Quiz</a></li>
+            <li class="selectfromdropdown"><a href="#tab5primary" data-toggle="tab" (click)="events('bestfromwaste')">Best From Waste</a></li>
         </ul>
     </li>
 		</ul>
@@ -39,7 +48,29 @@
 </div> -->
 			<div class="tab-content clearfix" style="color: white;height: -webkit-fill-available;overflow:auto" [ngStyle]="{'background-image': 'url(' + bglogo + ')','background-size':'100% 100%'}">
 			  <div class="tab-pane active" id="1a">
-          <home>Loading Home</home>
+          <div *ngIf='homeState'><home>Loading Home</home></div>
+          <div *ngIf='andriodState'>
+            <span style="font-size: 20px">Click on the following Aavishkar icon or Scan QR Code to download  android app.</span>
+            <br />
+           <div>
+            <a target="_blank"  href="https://drive.google.com/drive/folders/0B1H8slwJh2TVdWJiRnVmOGpQNGM" > <img [src]="applogo"  alt="app" style="height: 200px;width:200px"></a>
+            <img [src]="qrcode"  alt="app" style="height: 200px;width:200px">
+          </div>
+           <br> <span>
+              <a (click)="home.click();">Go Back </a>
+            </span>
+          </div>
+          <div *ngIf='fbState'>
+            <span>Click on the following link to follow us on Facebook</span>
+            <div>
+            <a target="_blank"  href="http://www.facebook.com/AwesomeVDRITians" ><img [src]="fbtroll" alt="troll"></a>
+            <a target="_blank"  href="http://www.facebook.com/kls.vdrit.5" ><img [src]="fbofficial" alt="troll"></a>
+          </div>
+           <br>
+            <span>
+              <a (click)="home.click();">Go Back </a>
+            </span>
+          </div>
 				</div>
 				<div class="tab-pane  fade" id="2a">
          <app-aboutus>Loading About</app-aboutus>
@@ -50,8 +81,39 @@
           <div class="tab-pane  fade" id="4a">
           <h3>We use css to change the background color of the content to be equal to the tab</h3>
         </div>
-        <div class="tab-pane fade" id="tab4primary"><div class="paragraph" style="text-align:left;"><font color="#da4444"><span style="font-weight:400"><span style="font-weight:400"><font size="6"><strong><span>&nbsp;&nbsp;&nbsp;Basic Science TOPICS</span></strong></font></span></span></font><font size="6"><strong><font color="#da4444">&#65279;:</font></strong></font><br /><br /><font size="4"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.Photonics: Theory and its applications.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.Physics of Micro &amp; Molecular Electronic Devices.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.Conquering Metallic Corrosion.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Green Chemistry in Technology.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.Applications of Differential equations in Mathematical Modelling.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.Transformation techniques in Engineering</strong></font>.<br /><br /><strong><font size="4" color="#f80707">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="5">Rules:</font><br /></font></strong><font size="4"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. The format of paper must be in Time New Roman with font size 12,1.5 - line spacing<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in MS-Word format must not exceed 8 pages.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 2 participants in each team.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Time limit: 10Mins for&nbsp; presentation and 2Mins for discussions.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Registration fees Rs.200/- per team</font><br /><font size="4"><strong><font color="#f80707">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Staff Co-ordinators:</font></font></strong><br /><strong><font size="3" color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="4">1. Dr. Anita.R.Shettar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cell:9844829591</font></font><br /><font color="#3f3f3f"><font color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Dr. Satish.Hande &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cell:8050425503</font></font></strong></font><br /><br /><font size="4"><strong><font color="#f80707"><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Student Co-ordinator:</font></font></strong><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">&nbsp;<font size="4"><strong>&nbsp; <font color="#2a2a2a">1.</font></strong></font></font><strong><strong> Deepa.Amingad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#2a2a2a">Cell:</font>7411156524</strong></strong></font><br /><font size="4"><strong><font size="3" color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></strong></font><br /><font size="5"><font color="#5848b7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mail id:</strong></font><span><font color="#5fa233"><strong>&#65279;aavishkaarbs@gmail.com</strong></font></span></font><br /></div></div>
-        <div class="tab-pane fade" id="tab5primary">Primary 5</div>
+        <div class="tab-pane fade" id="tab4primary">
+          <!--div class="paragraph" style="text-align:left;"><font color="#da4444"><span style="font-weight:400"><span style="font-weight:400"><font size="6"><strong><span>&nbsp;&nbsp;&nbsp;Basic Science TOPICS</span></strong></font></span></span></font><font size="6"><strong><font color="#da4444">&#65279;:</font></strong></font><br /><br /><font size="4"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.Photonics: Theory and its applications.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.Physics of Micro &amp; Molecular Electronic Devices.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.Conquering Metallic Corrosion.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Green Chemistry in Technology.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.Applications of Differential equations in Mathematical Modelling.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.Transformation techniques in Engineering</strong></font>.<br /><br /><strong><font size="4" color="#f80707">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="5">Rules:</font><br /></font></strong><font size="4"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. The format of paper must be in Time New Roman with font size 12,1.5 - line spacing<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in MS-Word format must not exceed 8 pages.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 2 participants in each team.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Time limit: 10Mins for&nbsp; presentation and 2Mins for discussions.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Registration fees Rs.200/- per team</font><br /><font size="4"><strong><font color="#f80707">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Staff Co-ordinators:</font></font></strong><br /><strong><font size="3" color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="4">1. Dr. Anita.R.Shettar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cell:9844829591</font></font><br /><font color="#3f3f3f"><font color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Dr. Satish.Hande &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cell:8050425503</font></font></strong></font><br /><br /><font size="4"><strong><font color="#f80707"><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Student Co-ordinator:</font></font></strong><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">&nbsp;<font size="4"><strong>&nbsp; <font color="#2a2a2a">1.</font></strong></font></font><strong><strong> Deepa.Amingad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#2a2a2a">Cell:</font>7411156524</strong></strong></font><br /><font size="4"><strong><font size="3" color="#2a2a2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></strong></font><br /><font size="5"><font color="#5848b7"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mail id:</strong></font><span><font color="#5fa233"><strong>&#65279;aavishkaarbs@gmail.com</strong></font></span></font><br /></div-->
+          <div [innerHTML]="content" style="opacity: 1"></div>
+        </div>
+        <div class="tab-pane fade" id="tab5primary" >
+            <!--div [innerHTML]="eventContent" style="opacity: 1"></div-->
+             <div class="showincenter">
+            <img [src]="EventLogo" alt="d" class="image">
+          </div>
+          <div class="eventheader">
+              <div [innerHTML]="eventHeader" class="eventheader" style="opacity: 1"></div>
+          </div>
+          <div><span class="rules">Rules :</span> </div>
+          <div [innerHTML]="eventRules" class="rulescontent" style="opacity: 1"></div>
+          <br>
+          <div [innerHTML]="eventCharges" class="eventCharges" style="opacity: 1"></div>
+          <br>
+          <div>
+            <span style="font-size: 20px;color:gold;font-weight: bold;" >
+                ​Staff Coordinator:<br>
+            </span>
+            <div [innerHTML]="eventStaff" class="eventcoordinator"></div>
+            <br>
+            <span  style="font-size: 25px;color:gold;font-weight: bold;" >
+                Student Coordinator: <br>
+            </span>
+            <div [innerHTML]="eventStudent" class="eventcoordinator"></div>
+          </div>
+         
+            <br/>
+        </div>
+        
+        
 			</div>
   </div>
 

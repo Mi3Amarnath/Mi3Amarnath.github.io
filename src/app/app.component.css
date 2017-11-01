@@ -19,7 +19,9 @@ body{
     background-color: white;
     padding : 5px 15px;
   }
-  
+  a{
+    font-weight: bold;
+  }
   /* remove border radius for the tab */
   
   #exTab1 .nav-pills > li > a {
@@ -40,6 +42,8 @@ body{
   
   .dropdown:hover .dropdown-menu {
     display: block;
+    margin: 0px;
+    padding: 0px;
 }
 .clearfix{
   height: -webkit-fill-available;
@@ -134,4 +138,51 @@ background-color:blueviolet;
 }
 .boldertext{
   font-weight: bold;
+}
+.eventheader
+{
+  text-align: -webkit-center;
+  font-size: -webkit-xxx-large;
+  font-family: cursive;
+}
+.rules
+{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  color: red;
+
+}
+.rulescontent {
+ 
+  font-size: 17px;
+  font-family: cursive;
+ font-weight: initial;
+  border: 0;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+}
+.eventCharges{
+  font-size: 17px;
+  color: red;
+  font-weight: bold;
+}
+.eventcoordinator
+{
+  
+  font-size: 20px;
+  font-family: cursive;
+ font-weight: initial;
+  border: 0;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
 }

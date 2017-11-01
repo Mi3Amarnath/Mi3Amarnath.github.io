@@ -7,9 +7,9 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" style="height: 200px;">
+    <div class="carousel-inner" style="height: 300px;">
       <div class="item active centerimg"  (click)="opentribology()"  data-toggle="modal" data-target="#myModal" >
-        <img [src]="tribologi" alt="Los Angeles" style="height: 200px;width: 100%">
+        <img [src]="tribologi" alt="Los Angeles" style="height: 300px;width: 100%">
         <!--div class="carousel-caption">
           <h3>Tribo-Logi</h3>
           
@@ -17,7 +17,7 @@
       </div>
 
       <div class="item centerimg"  (click)="openBestFromWaste()"  data-toggle="modal" data-target="#myModal">
-        <img [src]="bestFromWaste" alt="Chicago" style="height: 200px;width: 100%">
+        <img [src]="bestFromWaste" alt="Chicago" style="height: 300px;width: 100%">
         <!--div class="carousel-caption">
             <h3>Best From Waste</h3>
             
@@ -25,7 +25,7 @@
       </div>
     
       <div class="item centerimg"  (click)="openGeneralQuiz()"  data-toggle="modal" data-target="#myModal">
-        <img [src]="generalquiz" alt="New york" style="height: 200px;width: 100%">
+        <img [src]="generalquiz" alt="New york" style="height: 300px;width: 100%">
         <!--div class="carousel-caption">
             <h3>General Quiz</h3>
             
@@ -34,15 +34,28 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="color: cyan;    
+    opacity: 1;">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="color: cyan;
+    opacity: 1;">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
+
+  <div>
+    <h2>Aavishkar Registration</h2>
+    <div class="col-lg-3">
+      <button class="btn-custom btn"><a target="_blank" href="http://aavishkaar17.weebly.com/uploads/4/7/5/2/47524065/aavishkaar17-a4.pdf"><span style="color:white">AAVISHKAR 17 SCHEDULE</span></a>  </button>
+      <button class="btn-custom btn"><a target="_blank" href="https://docs.google.com/forms/d/1ybJah3OFaR_WGnPR6L-n8Iry6RgsYrmHzvHcbKEDL6w/edit?usp=sharing"><span style="color:white">PPT REGISTRATION FORM</span></a>  </button>
+      <button class="btn-custom btn"><a target="_blank" href="https://docs.google.com/forms/d/1fOBmfm_ZrXDyz2M2S3S5Q1fJQRk3KRsLtPtAl-OVjL0/edit?usp=sharing"><span style="color:white">EVENTS REGISTRATION FORM</span></a>  </button>
+    </div>
+
+  </div>
+  <div>
   <h2>Events Overview</h2>
   <div class="row">
   <!-- Trigger the modal with a button -->
@@ -68,6 +81,7 @@
     </div>
   </div>
 </div>
+</div>
   <!--button type="button" class="btn btn-info btn-lg tooltip1 col-sm-4" data-toggle="modal" data-target="#myModal" (click)="opentribology()">TriboLogy
       <div class="tooltiptext">
           <img [src]="LOGO" class="tooltipImage"/>
@@ -88,9 +102,9 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="color: darkcyan;font-weight: bold;">
           <button type="button" class="close " data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">{{headerName}}</h4>
+          <h2 class="modal-title">{{headerName}}</h2>
         </div>
         <div class="modal-body" [ngStyle]="{'background-image': 'url(' + ELOGO + ')','background-size':'100% 100%'}">
           <!--div class="showincenter">
